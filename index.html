@@ -50,6 +50,30 @@
 			alert("WRONG! THAT IS NOT MY FAVORITE COLOR!");
 		};
 
+		var bonusQuestion = prompt("What is the airspeed velocity of an unladen swallow? (in mph)");
+		var airSpeed = parseInt(bonusQuestion);
+		console.log("air speed guess " + airSpeed);
+
+		if (airSpeed === "24") {
+			console.log("bonus question correct");
+			alert("Correct you may proceed");
+		} else if (bonusQuestion === "african or european swallow?") {
+			console.log("OH NO!")
+			alert("I, I don't know tha- AAAHHHHHHH!");
+		} else if (airSpeed > 24) {
+			console.log("bonusQuestion to high");
+			alert("WRONG! AHAHHA HA! to fast");
+		}
+		else if (airSpeed < 24) {
+			console.log("bonusQuestion to low");
+			alert("WRONG! AHAHHA HA! to slow!");
+		}
+		else {
+			alert("what was that? WRONG");
+			console.log(bonusQuestion + " not a number");
+		};
+
+
 
 	</script>
 </body>
