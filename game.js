@@ -1,4 +1,4 @@
-alert("Halt! Before ye enter this page ye must answer me these questions three.");
+alert("Halt! Before ye enter this page ye must answer me these questions three, no wait four, four questions...no, five?");
 
 var correct = 0
 
@@ -29,7 +29,7 @@ var question2 = prompt("What is his quest?").toLowerCase();
 		alert("Yess, correct he seeks the coding secretsss");
 		correct++;
 	} else if (question2 === "to code") {
-		console.log("question 2 correct, short")
+		console.log("question 2 correct, short");
 		alert("Very Well....acceptable");
 		correct++;
 	} else {
@@ -78,4 +78,39 @@ var bonusQuestion = prompt("Bonus: What is the airspeed velocity of an unladen s
 	};
 	console.log("right answers " + correct);
 
-alert("You got " + correct + " correct out of 4");
+var guesses = 0
+var fifthQuestion = prompt("One more question \n Umm... \n I am thinking of a number between 1 and 100, what is it?");
+	var guess = parseInt(fifthQuestion)
+	if (guess === 77) {
+		console.log("fifth question guess is "+ fifthQuestion);
+		alert("Correct!");
+		correct++;
+		guesses++;
+	}
+
+while(guesses < 3) {
+		if (guess === 77) {
+			console.log("fifth question guess is "+ fifthQuestion);
+			alert("Correct!");
+			break;
+	}
+		else if (guess > 77) {
+			console.log("guess to high");
+			fifthQuestion = prompt("To high! Try again.");
+			guess = parseInt(fifthQuestion);
+			guesses++;
+			console.log("guess " + guesses + " is " + guess)
+	} 
+	else if (guess < 77) {
+			console.log("guess to low");
+			fifthQuestion = prompt("To low! Try again.");
+			guess = parseInt(fifthQuestion);
+			guesses++;
+			console.log("guess " + guesses + " is " + guess)
+	}
+	else if (guesses = 4) {
+		alert("You have failed for the last time! \n (it was 77)")
+	}
+}
+
+alert("You have answered " + correct + " of 5. \nYou may proceed");
