@@ -1,67 +1,31 @@
-alert("Halt! Before ye enter this page ye must answer me these questions three.");
-var question1 = prompt("One, Who is he who crafted me?").toLowerCase();
+var numCorrect = 0;
 
-	console.log("Answer to question1 " + question1);
+var ans1 = document.getElementById('a1');
+var ans2 = document.getElementById('a2');
+var ans3 = document.getElementById('a3');
+var bonus = document.getElementById('bonus');
+var correctCount = document.getElementById('elCorrect');
 
-	if (question1 === "sam nortz") {
-		console.log("question1 correct");
-		alert("Yess, correct he is the one that crafted me");
-	} else if (question1 === "sam") {
-		console.log("question1 correct, short");
-		alert("Correct he is the one that crafted me");
-	} else {
-		console.log("incorrect name");
-		alert("WRONG!");
-	};
+var questions = ["One, Who is he who crafted me?", "What is his quest?", "What is his favorite color?", "Bonus: What is the airspeed velocity of an unladen swallow? (in mph)"];
+var answers = ["Yess, correct he is the one that crafted me", "Yess, correct he seeks the coding secretsss", "Yess, correct he does like blue", 24];
+var els = [ans1, ans2, ans3, bonus]
 
-var question2 = prompt("What is his quest?").toLowerCase();
+function game(questions, answers, index) {
+	var userInput = prompt(questions).toLowerCase();
 
-	console.log("Answer to question2 " + question2);
-
-	if (question2 === "to learn how to code") {
-		console.log("question 2 correct");
-		alert("Yess, correct he seeks the coding secretsss");
-	} else if (question2 === "to code") {
-		console.log("question 2 correct, short")
-		alert("Very Well....acceptable");
-	} else {
-		console.log("question 2 incorrect");
-		alert("WRONG! Why is he taking this class? Think!");
-	};
-
-var question3 = prompt("What is his favorite color?").toLowerCase();
-
-	console.log("Answer to question 3 " + question3);
-
-	if (question3 === "blue") {
-		console.log("question 3 correct");
-		alert("Yess, correct he does like blue");
-	} else {
-		console.log("question 3 incorrect");
-		alert("WRONG! THAT IS NOT MY FAVORITE COLOR!");
-	};
-
-var bonusQuestion = prompt("Bonus: What is the airspeed velocity of an unladen swallow? (in mph)");
-	var airSpeed = parseInt(bonusQuestion);
-	console.log("air speed guess " + airSpeed);
-
-	if (airSpeed === 24) {
-		console.log("bonus question correct");
-		alert("Correct you may proceed");
-	} else if (bonusQuestion === "african or european swallow?") {
-		console.log("OH NO!")
-		alert("I, I don't know tha- AAAHHHHHHH!");
-	} else if (airSpeed > 24) {
-		console.log("bonusQuestion to high");
-		alert("WRONG! AHAHHA HA! to fast");
+	if (userInput === answers || userInput === parseInt(answers)) {
+		console.log(userInput + ' correct')
+		els[index].textContent = userInput + ' is correct';
+		numCorrect++
 	}
-	else if (airSpeed < 24) {
-		console.log("bonusQuestion to low");
-		alert("WRONG! AHAHHA HA! to slow!");
-	}
-	else {
-		alert("what was that? WRONG!");
-		console.log(bonusQuestion + " not a number");
-	};
+	 	else {
+	 		console.log(userInput + ' incorrect')
+			els[index].textContent = userInput + ' is incorrect';
+	 	}
+}
 
+for (var i = 0; i < questions.length; i++) {
+ game(questions[i], answers[i], i);
+}
 
+elCorrect.textContent = "You got " + numCorrect + " out of 3 questions and the bonus question!"
