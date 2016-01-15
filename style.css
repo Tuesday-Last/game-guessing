@@ -1,0 +1,12 @@
+.question {
+  background-color: lightblue;
+  height: 100px;
+  width: 300px;
+  border-radius: 2%
+}
+
+#bonus{
+  background-color: lightgrey;
+  color: blue;
+  font-weight: bolder;
+}
