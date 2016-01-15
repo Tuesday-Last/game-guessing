@@ -11,15 +11,15 @@ var answers = ["Yess, correct he is the one that crafted me", "Yess, correct he 
 var els = [ans1, ans2, ans3, bonus]
 
 function game(questions, answers, index) {
-	var userInput = prompt(questions).toLowerCase();
+	var ques = prompt(questions).toLowerCase();
 
-	if (userInput === answers || userInput === parseInt(answers)) {
-		console.log(userInput + ' correct')
+	if (ques === answers || userInput === parseInt(answers)) {
+		console.log(ques + ' correct')
 		els[index].textContent = userInput + ' is correct';
 		numCorrect++
 	}
 	 	else {
-	 		console.log(userInput + ' incorrect')
+	 		console.log(ques + ' incorrect')
 			els[index].textContent = userInput + ' is incorrect';
 	 	}
 }
