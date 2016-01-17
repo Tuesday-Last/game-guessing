@@ -1,0 +1,19 @@
+body {
+
+background-image: url(images/bridgeofdeath.jpg);
+background-position: top center;
+background-repeat: no-repeat;
+background-color: darkgray;
+
+}
+
+p {
+  font-family: fantasy;
+  color: gold;
+
+}
+
+h1 {
+  font-family: fantasy;
+  color: gold;
+}
