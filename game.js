@@ -17,7 +17,7 @@ var correctCount = document.getElementById('elCorrect');
 //Questions and answers
 var questions = ["One, Who is he who crafted me?", "What is his quest?", "What is his favorite color?", "Bonus: What is the airspeed velocity of an unladen swallow? (in mph)"];
 var answers = ["sam", "to code", "blue", 24];
-//Game
+//Game function
 function game(questions, answers, index) {
 	var ques = prompt(questions).toLowerCase();
 
